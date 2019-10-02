@@ -21,6 +21,27 @@ module Amadeus
       def analytics
         Amadeus::Namespaces::Travel::Analytics.new(client)
       end
+
+      # The namespace for the travel Trip Parser APIs:
+      #
+      # @return [Amadeus::Namespaces::Travel::TripParserJobs]
+      # @example
+      #   amadeus.travel.travel.trip_parser_jobs
+      #
+      def trip_parser_jobs
+        Amadeus::Namespaces::Travel::TripParserJobs.new(client)
+      end
+
+      # The namespace for the Trip Parser APIs - retreiving the status of a trip parser job
+      #
+      # @param [String] job_id The ID of the trip parser job
+      # @return [Amadeus::Namespaces::Travel::TripParserJob]
+      # @example
+      #   amadeus.travel.trip_parser_job('JKKSJNMSKHJ')
+      #
+      def trip_parser_job(job_id)
+        Amadeus::Namespaces::Travel::TripParserJob.new(client, job_id)
+      end
     end
   end
 end

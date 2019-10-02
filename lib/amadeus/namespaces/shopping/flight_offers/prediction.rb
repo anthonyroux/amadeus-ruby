@@ -15,7 +15,7 @@ module Amadeus
         class Prediction < Amadeus::Client::Decorator
           # Returns a list of flight offers including a choice prediction for each itineary.
           #
-          # @option body [JSON] :body JSON response of the Flight Low-fare Search API
+          # @option params [JSON] :params JSON response of the Flight Low-fare Search API
           # @return [Amadeus::Response] a parsed response
           # @raise [Amadeus::Base] an exception if the call
           #   failed
